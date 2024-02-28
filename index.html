@@ -3,15 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Landing Page</title>
+    <title>Warning: Rising Sea Levels</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide vertical scrollbar */
+        }
+        #video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 100%;
+            width: auto;
+            height: auto;
+            animation: scrollVideo 30s linear infinite; /* Adjust duration as needed */
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1;
+        }
+        h1, p {
+            color: white; /* White text color */
+            text-shadow: 2px 2px 2px black; /* Black border */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes scrollVideo {
+            0% { top: 0; }
+            100% { top: -100%; }
+        }
+    </style>
 </head>
-Test Test
 <body>
 
-<video autoplay muted loop>
-    <source src="fish1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<div id="video-container">
+    <video autoplay muted loop>
+        <source src="fish1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <h1>Warning: Rising Sea Levels</h1>
+        <p>Sea levels are rising every year.</p>
+        <a href="content.html" class="btn">View More</a>
+    </div>
+</div>
 
 </body>
 </html>
